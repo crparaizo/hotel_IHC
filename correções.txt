@@ -1,0 +1,132 @@
+Consertar formato datas
+INSERIR ID E REMOVER MANUALMENTE
+fazer o pesquisar
+
+
+
+
+USE newhotel;
+
+UPDATE recepcionistas SET NOME = 'paraizo', DATANASC = '2000-08-24' WHERE id = 1;
+
+INSERT INTO recepcionistas (NOME, CPF, RG, SEXO, DATANASC, EMAIL, TEL, CEL, ENDERECO, NUM, CEP, CIDADE, UF, SENHA)
+ VALUES ('candida', '12345678912', '123456789', 'F', '24-08-2000', 'candida@gmail.com', '12345678', '985210123', 'Rua Tal', '456', '01234567', 'São Paulo', 'SP', 'candida')
+, ('luis', '12345678912', '12345678X', 'M', '1999-02-15', 'luis@gmail.com', '12345678', '985210123', 'Rua Tal', '456', '01234567', 'São Paulo', 'SP', 'luis')
+
+ public Connection con;
+    public Statement st;
+
+try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/newhotel", "root", "");
+            st = con.createStatement();
+
+            //JOptionPane.showMessageDialog(null, "Conectado com sucesso!!!");
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "Algo está errado!!!");
+        }
+
+
+txtNome.setText(null);
+        ftxtCpf.setText(null);
+        ftxtRg.setText(null);
+        rbtnMasculino.setText(null);
+        ftxtDataN.setText(null);
+        txtEmail.setText(null);
+        txtTel.setText(null);
+        txtCel.setText(null);
+        txtEndereco.setText(null);
+        txtNumero.setText(null);
+        txtCep.setText(null);
+        txtCidade.setText(null);
+        txtSenha.setText(null);
+
+
+String sexo = "";
+        if (rbtnMasculino.isSelected()) {
+            sexo = "M";
+        }
+        if (rbtnFeminino.isSelected()) {
+            sexo = "F";
+        }
+
+        String estado = "";
+        if (cbxUF.getSelectedItem().equals("AC")) {
+            estado = "AC";
+        } else if (cbxUF.getSelectedItem().equals("AL")) {
+            estado = "AL";
+        } else if (cbxUF.getSelectedItem().equals("AP")) {
+            estado = "AP";
+        } else if (cbxUF.getSelectedItem().equals("AM")) {
+            estado = "AM";
+        } else if (cbxUF.getSelectedItem().equals("BA")) {
+            estado = "BA";
+        } else if (cbxUF.getSelectedItem().equals("CE")) {
+            estado = "CE";
+        } else if (cbxUF.getSelectedItem().equals("DF")) {
+            estado = "DF";
+        } else if (cbxUF.getSelectedItem().equals("ES")) {
+            estado = "ES";
+        } else if (cbxUF.getSelectedItem().equals("GO")) {
+            estado = "GO";
+        } else if (cbxUF.getSelectedItem().equals("MA")) {
+            estado = "MA";
+        } else if (cbxUF.getSelectedItem().equals("MT")) {
+            estado = "MT";
+        } else if (cbxUF.getSelectedItem().equals("MS")) {
+            estado = "MS";
+        } else if (cbxUF.getSelectedItem().equals("MG")) {
+            estado = "MG";
+        } else if (cbxUF.getSelectedItem().equals("PA")) {
+            estado = "PA";
+        } else if (cbxUF.getSelectedItem().equals("PB")) {
+            estado = "PB";
+        } else if (cbxUF.getSelectedItem().equals("PR")) {
+            estado = "PR";
+        } else if (cbxUF.getSelectedItem().equals("PE")) {
+            estado = "PE";
+        } else if (cbxUF.getSelectedItem().equals("PI")) {
+            estado = "PI";
+        } else if (cbxUF.getSelectedItem().equals("RJ")) {
+            estado = "RJ";
+        } else if (cbxUF.getSelectedItem().equals("RN")) {
+            estado = "RN";
+        } else if (cbxUF.getSelectedItem().equals("RS")) {
+            estado = "RS";
+        } else if (cbxUF.getSelectedItem().equals("RR")) {
+            estado = "RR";
+        } else if (cbxUF.getSelectedItem().equals("SC")) {
+            estado = "SC";
+        } else if (cbxUF.getSelectedItem().equals("SP")) {
+            estado = "SP";
+        } else if (cbxUF.getSelectedItem().equals("SE")) {
+            estado = "SE";
+        } else if (cbxUF.getSelectedItem().equals("RO")) {
+            estado = "RO";
+        } else if (cbxUF.getSelectedItem().equals("TO")) {
+            estado = "TO";
+        }
+
+        String sql = "INSERT INTO recepcionistas (NOME, CPF, RG, SEXO, DATANASC, EMAIL, TEL, CEL, ENDERECO, NUM, CEP, CIDADE, UF, SENHA) "
+                + "VALUES ('"
+                + txtNome.getText() + "','"
+                + ftxtCpf.getText() + "','"
+                + ftxtRg.getText() + "','"
+                + sexo + "','"
+                + ftxtDataN.getText() + "','" //FORMATAR DATA
+                + txtEmail.getText() + "','"
+                + txtTel.getText() + "','"
+                + txtCel.getText() + "','"
+                + txtEndereco.getText() + "','"
+                + txtNumero.getText() + "','"
+                + txtCep.getText() + "','"
+                + txtCidade.getText() + "','"
+                + estado + "','"
+                + txtSenha.getText() + "');";
+
+        try {
+            st.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, "Cadastrado!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Não Cadastrado!");
+        }

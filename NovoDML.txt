@@ -1,0 +1,9 @@
+USE newhotel;
+
+INSERT INTO recepcionistas (NOME, CPF, RG, SEXO, DATANASC, EMAIL, TEL, CEL, ENDERECO, NUM, CEP, CIDADE, UF, SENHA)
+VALUES ('candida', '12345678912', '123456789', 'F', '2000-08-24', 'candida@gmail.com', '12345678', '985210123', 'Rua Tal', '456', '01234567', 'São Paulo', 'SP', 'candida'),
+	('luis', '12345678912', '12345678X', 'M', '2000-08-24', 'luis@gmail.com', '12345678', '985210123', 'Rua Tal', '456', '01234567', 'São Paulo', 'SP', 'luis');
+
+
+INSERT INTO QUARTOS (DESCRICAO , VALOR, QUANTPESSOAS, QUANTQUARTOS) 
+VALUES ('teste', '150', '5', '10');
